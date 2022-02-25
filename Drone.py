@@ -95,6 +95,9 @@ class Drone:
             return
         else:
             pos = (None, None)
+            self.x = None
+            self.y = None
+            return
 
         # while pos in self.visited and len(self.stack) > 0:
         #      pos = self.stack.pop()

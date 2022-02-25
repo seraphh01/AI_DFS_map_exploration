@@ -67,6 +67,7 @@ class Environment:
             self.__n = dummy.__n
             self.__m = dummy.__m
             self.__surface = dummy.__surface
+            self.__surface[10][0] = -1
             f.close()
 
     def image(self, colour=BLUE, background=WHITE):

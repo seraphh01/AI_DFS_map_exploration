@@ -36,6 +36,9 @@ def main():
     x = randint(0, 19)
     y = randint(0, 19)
 
+    x = 0
+    y = 0
+
     # cream drona
     d = Drone(x, y)
 
