@@ -1,15 +1,15 @@
 # import the pygame module, so you can use it
 import time
 
-from pygame.locals import *
 from random import randint
 
 # Creating some colors
-from Drone import Drone
-from Environment import *
+from controller.DroneController import DroneController
+from domain.Drone import Drone
+from domain.Environment import *
 
 # define indexes variations
-from Map import DMap
+from domain.Map import DMap
 
 
 # define a main function
@@ -41,6 +41,7 @@ def main():
 
     # cream drona
     d = Drone(x, y)
+    controller = DroneController(d)
 
     # create a surface on screen that has the size of 800 x 480
     screen = pygame.display.set_mode((800, 400))
@@ -62,7 +63,7 @@ def main():
             #     # use this function instead of move
             #     d.moveDSF(m)
             #     # d.move(m)
-        d.moveDSF(m)
+        controller.moveDSF(m)
         time.sleep(0.01)
         m.markDetectedWalls(e, d.x, d.y)
         screen.blit(m.image(d.x, d.y), (400, 0))
